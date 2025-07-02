@@ -1,6 +1,5 @@
-<template>
-  <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
-  </div>
-</template>
+<script setup>
+import { invoke } from "@tauri-apps/api/core";
+
+invoke("hello_world");
+</script>
