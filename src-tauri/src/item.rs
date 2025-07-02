@@ -35,6 +35,7 @@ fn fill_guns() -> Vec<Gun> {
         guns.push(Gun::deserialize(value.unwrap()).expect("Failed to convert"));
     }
 
+    println!("{:?}", guns);
     return guns;
 }
 

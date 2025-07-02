@@ -6,6 +6,12 @@ fn get_gun_names() -> Vec<String> {
     names.into()
 }
 
+#[tauri::command]
+fn get_gun(gun_name: String) -> item::Gun {
+    let result: item::Gun = item::get_gun(gun_name);
+    return result.into();
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
@@ -19,7 +25,7 @@ pub fn run() {
             }
             Ok(())
         })
-        .invoke_handler(tauri::generate_handler![get_gun_names])
+        .invoke_handler(tauri::generate_handler![get_gun_names, get_gun])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

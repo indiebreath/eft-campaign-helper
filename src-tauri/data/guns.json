@@ -20,7 +20,7 @@
     "semi": true,
     "full": 0,
     "burst": [0, 0],
-    "ammo": "FMJ",
+    "ammo": "M856",
     "attachments": ["Sight", "Compensator"],
     "accuracy": 0,
     "recoil": 0,
