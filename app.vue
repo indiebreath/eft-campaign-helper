@@ -1,5 +1,25 @@
 <script setup>
 import { invoke } from "@tauri-apps/api/core";
 
-invoke("hello_world");
+async function getPrimary() {
+    const res = await invoke("json_to_front");
+    const result = await res;
+    return result;
+}
+
+let primary = await getPrimary();
+console.log(primary);
 </script>
+
+<template>
+    <div>
+        <h1>EFT Campaign Helper</h1>
+        <div id="weapons">
+            <h2>Weapons</h2>
+            <div id="primary">
+                <h3>Primary Weapon</h3>
+                <p>Name: {{ primary.name }}</p>
+            </div>
+        </div>
+    </div>
+</template>

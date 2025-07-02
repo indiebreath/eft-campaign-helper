@@ -1,6 +1,8 @@
+mod item;
+
 #[tauri::command]
-fn hello_world() {
-    println!("Hello World!");
+fn json_to_front() -> item::Gun {
+    item::assault_to_json().into()
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
@@ -16,7 +18,7 @@ pub fn run() {
             }
             Ok(())
         })
-        .invoke_handler(tauri::generate_handler![hello_world])
+        .invoke_handler(tauri::generate_handler![json_to_front])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
