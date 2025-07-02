@@ -1,4 +1,9 @@
 use serde::{Deserialize, Serialize};
+use serde_json::{Deserializer, Value};
+
+use std::env;
+use std::fs;
+use std::sync::LazyLock;
 
 #[derive(Debug, Serialize, Deserialize)]
 pub struct Gun {
@@ -17,23 +22,18 @@ pub struct Gun {
     other: Vec<String>,
 }
 
-pub fn assault_to_json() -> Gun {
-    let data = r#"{
-        "name": "ADAR 2-15",
-        "cartridge": "5.56x45mm",
-        "range": 500,
-        "semi": true,
-        "full": 0,
-        "burst": [0, 0],
-        "ammo": "FMJ",
-        "attachments": ["Sight", "Compensator"],
-        "accuracy": 0,
-        "recoil": 0,
-        "weight": 3.0,
-        "size": 10,
-        "other": []
-    }"#;
+pub static GUNS: LazyLock<Vec<Gun>> = LazyLock::new(|| self::fill_guns());
 
-    let assault: Gun = serde_json::from_str(data).expect("Failed");
-    return assault;
+fn fill_guns() -> Vec<Gun> {
+    let mut path = env::current_dir().expect("Failed to retrieve path");
+    path.push("data/guns.json");
+    let data: String = fs::read_to_string(&path).expect("Failed to read from file");
+    let stream = Deserializer::from_str(&data).into_iter::<Value>();
+
+    let mut guns: Vec<Gun> = Vec::new();
+    for value in stream {
+        guns.push(Gun::deserialize(value.unwrap()).expect("Failed to convert"));
+    }
+
+    return guns;
 }

@@ -1,8 +1,8 @@
 mod item;
 
 #[tauri::command]
-fn json_to_front() -> item::Gun {
-    item::assault_to_json().into()
+fn setup() {
+    println!("{:?}", &*item::GUNS);
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
@@ -18,7 +18,7 @@ pub fn run() {
             }
             Ok(())
         })
-        .invoke_handler(tauri::generate_handler![json_to_front])
+        .invoke_handler(tauri::generate_handler![setup])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

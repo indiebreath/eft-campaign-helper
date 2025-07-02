@@ -1,14 +1,7 @@
 <script setup>
 import { invoke } from "@tauri-apps/api/core";
 
-async function getPrimary() {
-    const res = await invoke("json_to_front");
-    const result = await res;
-    return result;
-}
-
-let primary = await getPrimary();
-console.log(primary);
+invoke('setup');
 </script>
 
 <template>
