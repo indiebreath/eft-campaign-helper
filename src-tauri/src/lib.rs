@@ -1,8 +1,9 @@
 mod item;
 
 #[tauri::command]
-fn setup() {
-    println!("{:?}", item::get_gun("AVT-40".to_string()));
+fn get_gun_names() -> Vec<String> {
+    let names = item::get_gun_names();
+    names.into()
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
@@ -18,7 +19,7 @@ pub fn run() {
             }
             Ok(())
         })
-        .invoke_handler(tauri::generate_handler![setup])
+        .invoke_handler(tauri::generate_handler![get_gun_names])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

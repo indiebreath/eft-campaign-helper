@@ -38,6 +38,15 @@ fn fill_guns() -> Vec<Gun> {
     return guns;
 }
 
+pub fn get_gun_names() -> Vec<String> {
+    let mut names: Vec<String> = Vec::new();
+    for value in &*GUNS {
+        names.push(value.name.clone());
+    }
+
+    return names;
+}
+
 pub fn get_gun(name: String) -> Gun {
     let mut gun: Gun = Gun {
         name: "ADAR 2-15".to_string(),

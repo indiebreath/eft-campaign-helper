@@ -1,7 +1,14 @@
 <script setup>
 import { invoke } from "@tauri-apps/api/core";
 
-invoke('setup');
+async function getGunNames() {
+    const res = await invoke("get_gun_names");
+    const result = await res;
+    return result;
+}
+
+const GUN_NAMES = await getGunNames();
+console.log(GUN_NAMES);
 </script>
 
 <template>
@@ -11,7 +18,10 @@ invoke('setup');
             <h2>Weapons</h2>
             <div id="primary">
                 <h3>Primary Weapon</h3>
-                <p>Name: {{ primary.name }}</p>
+                <p>Name: </p>
+                <select name="primary-weapon" id="primary-weapon">
+                    <option v-for="x in GUN_NAMES" v-bine:value="x">{{ x }}</option>
+                </select>
             </div>
         </div>
     </div>
