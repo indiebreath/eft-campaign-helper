@@ -5,7 +5,7 @@ use std::env;
 use std::fs;
 use std::sync::LazyLock;
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Clone, Serialize, Deserialize)]
 pub struct Gun {
     name: String,
     cartridge: String,
@@ -36,4 +36,30 @@ fn fill_guns() -> Vec<Gun> {
     }
 
     return guns;
+}
+
+pub fn get_gun(name: String) -> Gun {
+    let mut gun: Gun = Gun {
+        name: "ADAR 2-15".to_string(),
+        cartridge: "5.56x45mm".to_string(),
+        range: 500,
+        semi: true,
+        full: 0,
+        burst: [0, 0].to_vec(),
+        ammo: "FMJ".to_string(),
+        attachments: ["Sight".to_string(), "Compensator".to_string()].to_vec(),
+        accuracy: 0,
+        recoil: 0,
+        weight: 3.0,
+        size: 10,
+        other: [].to_vec(),
+    };
+
+    for value in &*GUNS {
+        if value.name == name {
+            gun = value.clone();
+        }
+    }
+
+    return gun;
 }

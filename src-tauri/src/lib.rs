@@ -2,7 +2,7 @@ mod item;
 
 #[tauri::command]
 fn setup() {
-    println!("{:?}", &*item::GUNS);
+    println!("{:?}", item::get_gun("AVT-40".to_string()));
 }
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]

@@ -1,17 +1,17 @@
 {
-    "name": "ADAR 2-15",
-    "cartridge": "5.56x45mm",
-    "range": 500,
+    "name": "9A-91",
+    "cartridge": "9x39mm",
+    "range": 300,
     "semi": true,
-    "full": 0,
+    "full": -8,
     "burst": [0, 0],
     "ammo": "FMJ",
-    "attachments": ["Sight", "Compensator"],
+    "attachments": ["Sight"],
     "accuracy": 0,
     "recoil": 0,
-    "weight": 3.0,
-    "size": 10,
-    "other": []
+    "weight": 2.5,
+    "size": 8,
+    "other": ["Folding"]
 }
 {
     "name": "ADAR 2-15",
