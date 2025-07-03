@@ -1,4 +1,49 @@
 {
+    "class": "9x39mm",
+    "rounds": [
+        {
+            "name": "FMJ",
+            "damage": "6d12",
+            "penetration": 2,
+            "recoil": 2,
+            "accuracy": 2,
+            "other": ["Subsonic"]
+        },
+        {
+            "name": "SPP GS",
+            "damage": "5d12",
+            "penetration": 3,
+            "recoil": 4,
+            "accuracy": -5,
+            "other": ["Subsonic"]
+        },
+        {
+            "name": "PAB-9",
+            "damage": "6d10",
+            "penetration": 5,
+            "recoil": -5,
+            "accuracy": -8,
+            "other": ["Subsonic"]
+        },
+        {
+            "name": "SP-6",
+            "damage": "6d10",
+            "penetration": 6,
+            "recoil": -3,
+            "accuracy": 0,
+            "other": ["Subsonic"]
+        },
+        {
+            "name": "BP GS",
+            "damage": "4d12",
+            "penetration": 6,
+            "recoil": -8,
+            "accuracy": 5,
+            "other": ["Subsonic"]
+        }
+    ]
+}
+{
     "class": "5.56x45mm",
     "rounds": [
         {
@@ -15,6 +60,54 @@
             "penetration": 0,
             "recoil": 0,
             "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "MK 255 Mod 0",
+            "damage": "6d12",
+            "penetration": 1,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "FMJ",
+            "damage": "6d10",
+            "penetration": 2,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "M855",
+            "damage": "9d6",
+            "penetration": 3,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "M856A1",
+            "damage": "4d12",
+            "penetration": 3,
+            "recoil": -2,
+            "accuracy": -2,
+            "other": ["Tracer"]
+        },
+        {
+            "name": "M855A1",
+            "damage": "5d10",
+            "penetration": 5,
+            "recoil": -3,
+            "accuracy": -3,
+            "other": []
+        },
+        {
+            "name": "M995",
+            "damage": "7d6",
+            "penetration": 6,
+            "recoil": -4,
+            "accuracy": -4,
             "other": []
         }
     ]

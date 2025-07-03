@@ -4,7 +4,7 @@ import { invoke } from "@tauri-apps/api/core";
 
 const GUN_NAMES = await invoke("get_gun_names");
 
-const primary = ref(await invoke("get_gun", { gunName: "ADAR 2-15" }));
+const primary = ref(await invoke("get_gun", { gunName: "9A-91" }));
 const ammo = ref({
     primary: await invoke("get_ammo", { ammoName: primary.value.cartridge, roundName: primary.value.ammo }),
     primaryAmount: [primary.value.max, primary.value.max, 180],
@@ -12,8 +12,7 @@ const ammo = ref({
     tertiary: [0, 0, 0]
 });
 
-const AMMO_NAMES = await invoke("get_ammo_names", {ammoName: primary.value.cartridge});
-console.log(AMMO_NAMES);
+const AMMO_NAMES = ref(await invoke("get_ammo_names", {ammoName: primary.value.cartridge}));
 
 function updatePrimaryRecoil() {
     let recoil = ammo.value.primary.recoil;
@@ -35,6 +34,7 @@ async function changePrimary(event) {
 
 async function changePrimaryAmmo(event) {
     ammo.value.primary = await invoke("get_ammo", { ammoName: primary.value.cartridge, roundName: event.target.value});
+    AMMO_NAMES.value = await invoke("get_ammo_names", {ammoName: primary.value.cartridge});
     updatePrimaryRecoil();
     updatePrimaryAccuracy();
 }
