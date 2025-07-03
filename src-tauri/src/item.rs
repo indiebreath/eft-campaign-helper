@@ -106,6 +106,22 @@ pub fn get_gun(name: String) -> Gun {
     return gun;
 }
 
+pub fn get_ammo_names(ammo_name: String) -> Vec<String> {
+    let mut rounds: Vec<Round> = Vec::new();
+    for value in &*AMMO {
+        if value.class == ammo_name {
+            rounds = value.rounds.clone();
+        }
+    }
+
+    let mut names: Vec<String> = Vec::new();
+    for value in &rounds {
+        names.push(value.name.clone());
+    }
+
+    return names;
+}
+
 pub fn get_ammo(ammo_name: String, round_name: String) -> Round {
     let mut result: Round = Round {
         name: "Warmageddon".to_string(),
