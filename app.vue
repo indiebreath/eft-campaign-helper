@@ -1,4 +1,4 @@
-<script setup>
+<script setup ts="ts">
 import { ref } from "vue";
 import { invoke } from "@tauri-apps/api/core";
 
@@ -6,22 +6,27 @@ const GUN_NAMES = await invoke("get_gun_names");
 
 const primary = ref(await invoke("get_gun", { gunName: "9A-91" }));
 const ammo = ref({
-    primary: await invoke("get_ammo", { ammoName: primary.value.cartridge, roundName: primary.value.ammo }),
+    primary: await invoke("get_ammo", {
+        ammoName: primary.value.cartridge,
+        roundName: primary.value.ammo,
+    }),
     primaryAmount: [primary.value.max, primary.value.max, 180],
     secondary: [0, 0, 0],
-    tertiary: [0, 0, 0]
+    tertiary: [0, 0, 0],
 });
 
-const AMMO_NAMES = ref(await invoke("get_ammo_names", {ammoName: primary.value.cartridge}));
+const AMMO_NAMES = ref(
+    await invoke("get_ammo_names", { ammoName: primary.value.cartridge }),
+);
 
 function updatePrimaryRecoil() {
-    let recoil = ammo.value.primary.recoil;
+    const recoil = ammo.value.primary.recoil;
     primary.value.recoil = recoil;
 }
 updatePrimaryRecoil();
 
 function updatePrimaryAccuracy() {
-    let accuracy = ammo.value.primary.accuracy;
+    const accuracy = ammo.value.primary.accuracy;
     primary.value.accuracy = accuracy;
 }
 updatePrimaryAccuracy();
@@ -33,30 +38,37 @@ async function changePrimary(event) {
 }
 
 async function changePrimaryAmmo(event) {
-    ammo.value.primary = await invoke("get_ammo", { ammoName: primary.value.cartridge, roundName: event.target.value});
-    AMMO_NAMES.value = await invoke("get_ammo_names", {ammoName: primary.value.cartridge});
+    ammo.value.primary = await invoke("get_ammo", {
+        ammoName: primary.value.cartridge,
+        roundName: event.target.value,
+    });
+    AMMO_NAMES.value = await invoke("get_ammo_names", {
+        ammoName: primary.value.cartridge,
+    });
     updatePrimaryRecoil();
     updatePrimaryAccuracy();
 }
 
 function changePrimaryAttachment(event) {
-    let position = primary.value.attachments.indexOf(event.target.id);
+    const position = primary.value.attachments.indexOf(event.target.id);
     primary.value.attachments[position] = event.target.value;
 }
 
 function changePrimaryMax(event) {
     ammo.value.primaryAmount[1] = event.target.value;
-    console.log(ammo.value.primaryAmount[1]);
 }
 
 function firePrimary() {
     ammo.value.primaryAmount[0]--;
+    if (ammo.value.primaryAmount[0] < 0) {
+        ammo.value.primaryAmount[0] = 0;
+    }
 }
 
 function reloadPrimary() {
-    const diff = ammo.value.primaryAmount[1] - ammo.value.primary[0];
-    ammo.value.primaryAmount[0] = ammo.value.primary[1];
-    ammo.value.primaryAmount[2] -= diff;
+    const diff = ammo.value.primaryAmount[1] - ammo.value.primaryAmount[0];
+    ammo.value.primaryAmount[0] = ammo.value.primaryAmount[1];
+    ammo.value.primaryAmount[2] = ammo.value.primaryAmount[2] - diff;
 }
 
 function changePrimaryTotal(event) {
@@ -77,21 +89,16 @@ function changePrimaryTotal(event) {
                 <div id="primary-info">
                     <p>Name:</p>
                     <select
-                        name="primaryWeapon"
                         id="primaryWeapon"
+                        name="primaryWeapon"
                         @change="changePrimary($event)"
                     >
-                        <option v-for="x in GUN_NAMES" v-bind:value="x">
+                        <option v-for="x in GUN_NAMES" :key="x" :value="x">
                             {{ x }}
                         </option>
                     </select>
 
                     <p>Cartridge: {{ primary.cartridge }}</p>
-
-                    <p>Ammo:</p>
-                    <select name="primaryAmmo" id="primaryAmmo" @change="changePrimaryAmmo($event)">
-                        <option v-for="z in AMMO_NAMES" v-bind:value="z">{{ z }}</option>
-                    </select>
 
                     <p>Range: {{ primary.range }}m</p>
 
@@ -104,27 +111,70 @@ function changePrimaryTotal(event) {
                         Burst ({{ primary.burst[0] }}, {{ primary.burst[1] }})
                     </p>
 
+                    <div v-if="primary.attachments[0]">
+                        <label for="primaryAttachments">Attachments:</label>
+                        <input
+                            v-for="y in primary.attachments"
+                            :id="y"
+                            :key="y"
+                            type="text"
+                            class="primaryAttachments"
+                            name="primaryAttachments"
+                            :value="y"
+                            @change="changePrimaryAttachment($event)"
+                        >
+                    </div>
 
-                    <p>Accuracy: {{ primary.accuracy }}</p>
-                    <p>Recoil: {{ primary.recoil }}</p>
                     <p>Weight: {{ primary.weight }}kg</p>
                     <p>Size: {{ primary.size }}</p>
                 </div>
 
-                <div id="primary-function">
-                    <div v-if="primary.attachments[0]">
-                        <label for="primaryAttachments">Attachments:</label>
-                        <input type="text" class="primaryAttachments" name="primaryAttachments" v-for="y in primary.attachments" @change="changePrimaryAttachment($event)" v-bind:value="y" v-bind:id="y"></input>
-                    </div>
+                <div id="primary-ammo">
+                    <p>Ammo:</p>
+                    <select
+                        id="primaryAmmo"
+                        name="primaryAmmo"
+                        @change="changePrimaryAmmo($event)"
+                    >
+                        <option v-for="z in AMMO_NAMES" :key="z" :value="z">
+                            {{ z }}
+                        </option>
+                    </select>
 
+                    <p>Damage: {{ ammo.primary.damage }}</p>
+                    <p>Penetration: {{ ammo.primary.penetration }}</p>
+
+                    <p>Accuracy: {{ primary.accuracy }}</p>
+                    <p>Recoil: {{ primary.recoil }}</p>
+                </div>
+
+                <div id="primary-function">
                     <p>Current Ammo: {{ ammo.primaryAmount[0] }}</p>
-                    <button id="firePrimary" v-on:click="firePrimary()">Fire</button>
 
                     <label for="maxPrimaryAmmo">Max Ammo:</label>
-                    <input type="text" id="maxPrimaryAmmo" name="maxPrimaryAmmo" @change="changePrimaryMax($event)" v-bind:value="ammo.primaryAmount[1]"></input>
-                    <button id="primaryReload" v-on:click="reloadPrimary()">Reload</button>
+                    <input
+                        id="maxPrimaryAmmo"
+                        type="text"
+                        name="maxPrimaryAmmo"
+                        :value="ammo.primaryAmount[1]"
+                        @change="changePrimaryMax($event)"
+                    ><br >
 
-                    <label for="totalAmmo">Total Ammo:</label> <input type="text" id="totalPrimaryAmmo" name="totalPrimaryAmmo" @change="changePrimaryTotal($event)" v-bind:value="ammo.primaryAmount[2]"></input>
+                    <label for="totalAmmo">Total Ammo:</label>
+                    <input
+                        id="totalPrimaryAmmo"
+                        type="text"
+                        name="totalPrimaryAmmo"
+                        :value="ammo.primaryAmount[2]"
+                        @change="changePrimaryTotal($event)"
+                    ><br >
+
+                    <button id="firePrimary" @click="firePrimary()">
+                        Fire
+                    </button>
+                    <button id="primaryReload" @click="reloadPrimary()">
+                        Reload
+                    </button>
                 </div>
             </div>
         </div>
