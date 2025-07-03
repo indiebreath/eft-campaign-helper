@@ -1,0 +1,21 @@
+{
+    "class": "5.56x45mm",
+    "rounds": [
+        {
+            "name": "Warmageddon",
+            "damage": "11d8",
+            "penetration": 0,
+            "recoil": -5,
+            "accuracy": 5,
+            "other": []
+        },
+        {
+            "name": "HP",
+            "damage": "8d10",
+            "penetration": 0,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        }
+    ]
+}

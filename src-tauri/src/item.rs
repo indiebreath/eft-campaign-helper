@@ -23,7 +23,24 @@ pub struct Gun {
     other: Vec<String>,
 }
 
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Round {
+    name: String,
+    damage: String,
+    penetration: i8,
+    recoil: i8,
+    accuracy: i8,
+    other: Vec<String>,
+}
+
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Ammo {
+    class: String,
+    rounds: Vec<Round>,
+}
+
 pub static GUNS: LazyLock<Vec<Gun>> = LazyLock::new(|| self::fill_guns());
+pub static AMMO: LazyLock<Vec<Ammo>> = LazyLock::new(|| self::fill_ammo());
 
 fn fill_guns() -> Vec<Gun> {
     let mut path = env::current_dir().expect("Failed to retrieve path");
@@ -36,8 +53,21 @@ fn fill_guns() -> Vec<Gun> {
         guns.push(Gun::deserialize(value.unwrap()).expect("Failed to convert"));
     }
 
-    println!("{:?}", guns);
     return guns;
+}
+
+fn fill_ammo() -> Vec<Ammo> {
+    let mut path = env::current_dir().expect("Failed to retrieve path");
+    path.push("data/ammo.json");
+    let data: String = fs::read_to_string(&path).expect("Failed to read from file");
+    let stream = Deserializer::from_str(&data).into_iter::<Value>();
+
+    let mut ammo: Vec<Ammo> = Vec::new();
+    for value in stream {
+        ammo.push(Ammo::deserialize(value.unwrap()).expect("Failed to convert"));
+    }
+
+    return ammo;
 }
 
 pub fn get_gun_names() -> Vec<String> {
@@ -64,7 +94,7 @@ pub fn get_gun(name: String) -> Gun {
         recoil: 0,
         weight: 3.0,
         size: 10,
-        other: [].to_vec(),
+        other: vec![],
     };
 
     for value in &*GUNS {
@@ -74,4 +104,27 @@ pub fn get_gun(name: String) -> Gun {
     }
 
     return gun;
+}
+
+pub fn get_ammo(ammo_name: String, round_name: String) -> Round {
+    let mut result: Round = Round {
+        name: "Warmageddon".to_string(),
+        damage: "11d8".to_string(),
+        penetration: 0,
+        recoil: -5,
+        accuracy: 5,
+        other: vec![],
+    };
+
+    for ammo in &*AMMO {
+        if ammo.class == ammo_name {
+            for round in &ammo.rounds {
+                if round.name == round_name {
+                    result = round.clone();
+                }
+            }
+        }
+    }
+
+    return result;
 }

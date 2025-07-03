@@ -4,17 +4,18 @@ import { invoke } from "@tauri-apps/api/core";
 
 const GUN_NAMES = await invoke("get_gun_names");
 
-const primary = ref(await invoke("get_gun", { gunName: "9A-91" }));
+const primary = ref(await invoke("get_gun", { gunName: "ADAR 2-15" }));
 const ammo = ref({
-    primary: [primary.value.max, primary.value.max, 180],
+    primary: await invoke("get_ammo", { ammoName: primary.value.cartridge, roundName: primary.value.ammo }),
+    primaryAmount: [primary.value.max, primary.value.max, 180],
     secondary: [0, 0, 0],
     tertiary: [0, 0, 0]
 })
 
 async function changePrimary(event) {
     primary.value = await invoke("get_gun", { gunName: event.target.value });
-    ammo.value.primary[0] = primary.value.max;
-    ammo.value.primary[1] = primary.value.max;
+    ammo.value.primaryAmount[0] = primary.value.max;
+    ammo.value.primaryAmount[1] = primary.value.max;
 }
 
 function changePrimaryAttachment(event) {
@@ -23,22 +24,22 @@ function changePrimaryAttachment(event) {
 }
 
 function changePrimaryMax(event) {
-    ammo.value.primary[1] = event.target.value;
-    console.log(ammo.value.primary[1]);
+    ammo.value.primaryAmount[1] = event.target.value;
+    console.log(ammo.value.primaryAmount[1]);
 }
 
 function firePrimary() {
-    ammo.value.primary[0]--;
+    ammo.value.primaryAmount[0]--;
 }
 
 function reloadPrimary() {
-    const diff = ammo.value.primary[1] - ammo.value.primary[0];
-    ammo.value.primary[0] = ammo.value.primary[1];
-    ammo.value.primary[2] -= diff;
+    const diff = ammo.value.primaryAmount[1] - ammo.value.primary[0];
+    ammo.value.primaryAmount[0] = ammo.value.primary[1];
+    ammo.value.primaryAmount[2] -= diff;
 }
 
 function changePrimaryTotal(event) {
-    ammo.value.primary[2] = event.target.value;
+    ammo.value.primaryAmount[2] = event.target.value;
 }
 </script>
 

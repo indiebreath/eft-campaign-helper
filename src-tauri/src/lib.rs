@@ -12,6 +12,12 @@ fn get_gun(gun_name: String) -> item::Gun {
     return result.into();
 }
 
+#[tauri::command]
+fn get_ammo(ammo_name: String, round_name: String) -> item::Round {
+    let result: item::Round = item::get_ammo(ammo_name, round_name);
+    return result.into()
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
@@ -25,7 +31,7 @@ pub fn run() {
             }
             Ok(())
         })
-        .invoke_handler(tauri::generate_handler![get_gun_names, get_gun])
+        .invoke_handler(tauri::generate_handler![get_gun_names, get_gun, get_ammo])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }
