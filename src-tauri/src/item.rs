@@ -20,6 +20,7 @@ pub struct Gun {
     recoil: i8,
     weight: f32,
     size: i8,
+    class: Vec<String>,
     other: Vec<String>,
 }
 
@@ -94,6 +95,7 @@ pub fn get_gun(name: String) -> Gun {
         recoil: 0,
         weight: 3.0,
         size: 10,
+        class: vec!["Assault".to_string(), "Rifle".to_string()],
         other: vec![],
     };
 

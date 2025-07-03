@@ -1,4 +1,49 @@
 {
+    "class": "4.6x30mm",
+    "rounds": [
+        {
+            "name": "Action SX",
+            "damage": "11d6",
+            "penetration": 2,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "Subsonic SX",
+            "damage": "5d10",
+            "penetration": 2,
+            "recoil": 11,
+            "accuracy": 5,
+            "other": ["Subsonic"]
+        },
+        {
+            "name": "JSP SX",
+            "damage": "3d12",
+            "penetration": 3,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "FMJ SX",
+            "damage": "4d12",
+            "penetration": 4,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "AP SX",
+            "damage": "6d6",
+            "penetration": 6,
+            "recoil": -5,
+            "accuracy": 0,
+            "other": []
+        }
+    ]
+}
+{
     "class": "9x39mm",
     "rounds": [
         {
@@ -40,6 +85,456 @@
             "recoil": -8,
             "accuracy": 5,
             "other": ["Subsonic"]
+        }
+    ]
+}
+{
+    "class": "9x18mm",
+    "rounds": [
+        {
+            "name": "PM SP7",
+            "damage": "6d12",
+            "penetration": 0,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": ["Subsonic"]
+        },
+        {
+            "name": "PM PSO GZH",
+            "damage": "9d6",
+            "penetration": 0,
+            "recoil": 0,
+            "accuracy": 5,
+            "other": ["Subsonic"]
+        },
+        {
+            "name": "PM PPT GZH",
+            "damage": "5d12",
+            "penetration": 1,
+            "recoil": 3,
+            "accuracy": -3,
+            "other": ["Subsonic"]
+        },
+        {
+            "name": "PM BZHT GZH",
+            "damage": "4d12",
+            "penetration": 2,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "PMM PSTM GZH",
+            "damage": "4d12",
+            "penetration": 2,
+            "recoil": -3,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "PM PBM GZH",
+            "damage": "4d10",
+            "penetration": 3,
+            "recoil": -2,
+            "accuracy": 0,
+            "other": []
+        }
+    ]
+}
+{
+    "class": "7.62x25mm",
+    "rounds": [
+        {
+            "name": "TT LRNPC",
+            "damage": "11d6",
+            "penetration": 1,
+            "recoil": 5,
+            "accuracy": 5,
+            "other": []
+        },
+        {
+            "name": "TT FMJ 43",
+            "damage": "6d10",
+            "penetration": 1,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "TT PT GZH",
+            "damage": "4d12",
+            "penetration": 1,
+            "recoil": 0,
+            "accuracy": -5,
+            "other": []
+        },
+        {
+            "name": "TT PST GGZH",
+            "damage": "5d10",
+            "penetration": 2,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        }
+    ]
+}
+{
+    "class": "9x19mm",
+    "rounds": [
+        {
+            "name": "RIP",
+            "damage": "10d10",
+            "penetration": 0,
+            "recoil": -3,
+            "accuracy": 5,
+            "other": []
+        },
+        {
+            "name": "PSO GZH",
+            "damage": "6d10",
+            "penetration": 1,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": ["Subsonic"]
+        },
+        {
+            "name": "Luger CCI",
+            "damage": "7d10",
+            "penetration": 1,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "M882",
+            "damage": "7d8",
+            "penetration": 2,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "AP 6.3",
+            "damage": "4d12",
+            "penetration": 3,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "PBP GZH",
+            "damage": "3d12",
+            "penetration": 4,
+            "recoil": -3,
+            "accuracy": 2,
+            "other": []
+        }
+    ]
+}
+{
+    "class": ".45",
+    "rounds": [
+        {
+            "name": "ACP RIP",
+            "damage": "13d10",
+            "penetration": 0,
+            "recoil": 0,
+            "accuracy": -3,
+            "other": ["Subsonic"]
+        },
+        {
+            "name": "ACP Hyrda-Shock",
+            "damage": "10d10",
+            "penetration": 1,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": ["Subsonic"]
+        },
+        {
+            "name": "ACP Lasermatch FMJ",
+            "damage": "6d12",
+            "penetration": 2,
+            "recoil": 0,
+            "accuracy": 5,
+            "other": ["Subsonic"]
+        },
+        {
+            "name": "ACP AP",
+            "damage": "11d6",
+            "penetration": 4,
+            "recoil": -4,
+            "accuracy": -3,
+            "other": ["Subsonic"]
+        }
+    ]
+}
+{
+    "class": ".50 AE",
+    "rounds": [
+        {
+            "name": "AE JHP",
+            "damage": "14d10",
+            "penetration": 0,
+            "recoil": -3,
+            "accuracy": -5,
+            "other": []
+        },
+        {
+            "name": "Hawk JSP",
+            "damage": "10d12",
+            "penetration": 2,
+            "recoil": -1,
+            "accuracy": -3,
+            "other": []
+        },
+        {
+            "name": "AE FMJ",
+            "damage": "8d10",
+            "penetration": 3,
+            "recoil": -5,
+            "accuracy": 0,
+            "other": []
+        }
+    ]
+}
+{
+    "class": "9x21mm",
+    "rounds": [
+        {
+            "name": "PE GZH",
+            "damage": "6d10",
+            "penetration": 1,
+            "recoil": 3,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "PS GZH",
+            "damage": "6d10",
+            "penetration": 2,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "7U4",
+            "damage": "9d6",
+            "penetration": 3,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "7N42",
+            "damage": "5d10",
+            "penetration": 4,
+            "recoil": -5,
+            "accuracy": -2,
+            "other": []
+        }
+    ]
+}
+{
+    "class": ".357",
+    "rounds": [
+        {
+            "name": "HP",
+            "damage": "10d10",
+            "penetration": 1,
+            "recoil": -7,
+            "accuracy": 6,
+            "other": []
+        },
+        {
+            "name": "JHP",
+            "damage": "11d8",
+            "penetration": 2,
+            "recoil": -4,
+            "accuracy": 6,
+            "other": []
+        },
+        {
+            "name": "FMJ",
+            "damage": "7d10",
+            "penetration": 3,
+            "recoil": -6,
+            "accuracy": 0,
+            "other": []
+        }
+    ]
+}
+{
+    "class": "5.7x28mm",
+    "rounds": [
+        {
+            "name": "R37.F",
+            "damage": "10d10",
+            "penetration": 0,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "SS198LF",
+            "damage": "7d10",
+            "penetration": 1,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "SS197SR",
+            "damage": "6d10",
+            "penetration": 2,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "SB193",
+            "damage": "6d10",
+            "penetration": 3,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "L191",
+            "damage": "5d10",
+            "penetration": 3,
+            "recoil": 6,
+            "accuracy": 2,
+            "other": ["Subsonic"]
+        },
+        {
+            "name": "SS190",
+            "damage": "5d10",
+            "penetration": 3,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        }
+    ]
+}
+{
+    "class": ".366",
+    "rounds": [
+        {
+            "name": "TKM Geksa",
+            "damage": "11d10",
+            "penetration": 1,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "TKM FMJ",
+            "damage": "10d10",
+            "penetration": 2,
+            "recoil": -5,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "TKM EKO",
+            "damage": "6d12",
+            "penetration": 3,
+            "recoil": 7,
+            "accuracy": -5,
+            "other": []
+        },
+        {
+            "name": "TKM AP-M",
+            "damage": "9d10",
+            "penetration": 5,
+            "recoil": -18,
+            "accuracy": -14,
+            "other": []
+        }
+    ]
+}
+{
+    "class": "5.45x39mm",
+    "rounds": [
+        {
+            "name": "PRS GS",
+            "damage": "7d10",
+            "penetration": 1,
+            "recoil": 2,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "SP",
+            "damage": "5d12",
+            "penetration": 1,
+            "recoil": 2,
+            "accuracy": 5,
+            "other": []
+        },
+        {
+            "name": "US GS",
+            "damage": "5d12",
+            "penetration": 2,
+            "recoil": 7,
+            "accuracy": 0,
+            "other": ["Subsonic"]
+        },
+        {
+            "name": "T GS",
+            "damage": "6d10",
+            "penetration": 2,
+            "recoil": 0,
+            "accuracy": -3,
+            "other": ["Tracer"]
+        },
+        {
+            "name": "PS GS",
+            "damage": "7d8",
+            "penetration": 3,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "PP GS",
+            "damage": "5d10",
+            "penetration": 3,
+            "recoil": -2,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "BT GS",
+            "damage": "9d6",
+            "penetration": 3,
+            "recoil": -3,
+            "accuracy": -1,
+            "other": ["Tracer"]
+        },
+        {
+            "name": "7N40",
+            "damage": "9d6",
+            "penetration": 3,
+            "recoil": 5,
+            "accuracy": 10,
+            "other": []
+        },
+        {
+            "name": "BP GS",
+            "damage": "4d12",
+            "penetration": 5,
+            "recoil": -4,
+            "accuracy": -2,
+            "other": []
+        },
+        {
+            "name": "BS GS",
+            "damage": "3d12",
+            "penetration": 6,
+            "recoil": -5,
+            "accuracy": -2,
+            "other": []
         }
     ]
 }
@@ -108,6 +603,430 @@
             "penetration": 6,
             "recoil": -4,
             "accuracy": -4,
+            "other": []
+        }
+    ]
+}
+{
+    "class": "7.62x39mm",
+    "rounds": [
+        {
+            "name": "HP",
+            "damage": "8d10",
+            "penetration": 1,
+            "recoil": -3,
+            "accuracy": -3,
+            "other": []
+        },
+        {
+            "name": "FMJ",
+            "damage": "8d8",
+            "penetration": 2,
+            "recoil": 1,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "US GZH",
+            "damage": "7d8",
+            "penetration": 3,
+            "recoil": 15,
+            "accuracy": 2,
+            "other": ["Subsonic"]
+        },
+        {
+            "name": "T-45M1 GZH",
+            "damage": "8d8",
+            "penetration": 3,
+            "recoil": 3,
+            "accuracy": -2,
+            "other": ["Tracer"]
+        },
+        {
+            "name": "PS GZH",
+            "damage": "6d10",
+            "penetration": 4,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "BP GZH",
+            "damage": "6d10",
+            "penetration": 5,
+            "recoil": -4,
+            "accuracy": -2,
+            "other": []
+        },
+        {
+            "name": "MAI AP",
+            "damage": "9d6",
+            "penetration": 6,
+            "recoil": -5,
+            "accuracy": -3,
+            "other": []
+        }
+    ]
+}
+{
+    "class": ".300",
+    "rounds": [
+        {
+            "name": "Blackout Whisper",
+            "damage": "9d10",
+            "penetration": 1,
+            "recoil": 2,
+            "accuracy": 2,
+            "other": []
+        },
+        {
+            "name": "Blackout V-Max",
+            "damage": "9d8",
+            "penetration": 2,
+            "recoil": 5,
+            "accuracy": 15,
+            "other": []
+        },
+        {
+            "name": "Blackout BCP FMJ",
+            "damage": "6d10",
+            "penetration": 3,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "Blackout M62 Tracer",
+            "damage": "9d6",
+            "penetration": 4,
+            "recoil": -1,
+            "accuracy": 0,
+            "other": ["Tracer"]
+        },
+        {
+            "name": "Blackout CBJ",
+            "damage": "6d10",
+            "penetration": 5,
+            "recoil": -2,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "Blackout AP",
+            "damage": "5d10",
+            "penetration": 5,
+            "recoil": -2,
+            "accuracy": 0,
+            "other": []
+        }
+    ]
+}
+{
+    "class": "6.8x51mm",
+    "rounds": [
+        {
+            "name": "SIG FMJ",
+            "damage": "8d10",
+            "penetration": 4,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "SIG Hybrid",
+            "damage": "9d8",
+            "penetration": 6,
+            "recoil": -5,
+            "accuracy": 1,
+            "other": []
+        }
+    ]
+}
+{
+    "class": "7.62x51mm",
+    "rounds": [
+        {
+            "name": "Ultra Nosler",
+            "damage": "10d10",
+            "penetration": 1,
+            "recoil": 2,
+            "accuracy": 2,
+            "other": []
+        },
+        {
+            "name": "BCP FMJ",
+            "damage": "8d10",
+            "penetration": 3,
+            "recoil": 0,
+            "accuracy": -4,
+            "other": []
+        },
+        {
+            "name": "M62 Tracer",
+            "damage": "8d10",
+            "penetration": 5,
+            "recoil": -1,
+            "accuracy": -3,
+            "other": ["Tracer"]
+        },
+        {
+            "name": "M80",
+            "damage": "8d10",
+            "penetration": 6,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        }
+    ]
+}
+{
+    "class": "7.62x54mmR",
+    "rounds": [
+        {
+            "name": "HP BT",
+            "damage": "10d10",
+            "penetration": 2,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": ["Tracer"]
+        },
+        {
+            "name": "SP BT",
+            "damage": "9d10",
+            "penetration": 3,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": ["Tracer"]
+        },
+        {
+            "name": "FMJ",
+            "damage": "7d12",
+            "penetration": 4,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "T-46M GZH",
+            "damage": "8d10",
+            "penetration": 3,
+            "recoil": 2,
+            "accuracy": -1,
+            "other": []
+        },
+        {
+            "name": "PS GZH",
+            "damage": "8d12",
+            "penetration": 5,
+            "recoil": -4,
+            "accuracy": 5,
+            "other": []
+        },
+        {
+            "name": "BT GZH",
+            "damage": "13d6",
+            "penetration": 6,
+            "recoil": 2,
+            "accuracy": -1,
+            "other": []
+        },
+        {
+            "name": "SNB GZH",
+            "damage": "9d8",
+            "penetration": 6,
+            "recoil": -5,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "BS GS",
+            "damage": "9d8",
+            "penetration": 6,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        }
+    ]
+}
+{
+    "class": "12.7x55mm",
+    "rounds": [
+        {
+            "name": "PS12A",
+            "damage": "13d12",
+            "penetration": 1,
+            "recoil": 6,
+            "accuracy": -8,
+            "other": ["Subsonic"]
+        },
+        {
+            "name": "PS12",
+            "damage": "9d12",
+            "penetration": 3,
+            "recoil": 0,
+            "accuracy": 5,
+            "other": ["Subsonic"]
+        },
+        {
+            "name": "PS12B",
+            "damage": "10d10",
+            "penetration": 5,
+            "recoil": -8,
+            "accuracy": 0,
+            "other": ["Subsonic"]
+        }
+    ]
+}
+{
+    "class": ".338",
+    "rounds": [
+        {
+            "name": "TAC-X",
+            "damage": "20d10",
+            "penetration": 2,
+            "recoil": -3,
+            "accuracy": 5,
+            "other": []
+        },
+        {
+            "name": "UCW",
+            "damage": "11d12",
+            "penetration": 4,
+            "recoil": 0,
+            "accuracy": -3,
+            "other": []
+        },
+        {
+            "name": "FMJ",
+            "damage": "10d12",
+            "penetration": 5,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "AP",
+            "damage": "14d8",
+            "penetration": 6,
+            "recoil": -5,
+            "accuracy": 0,
+            "other": ["Subsonic"]
+        }
+    ]
+}
+{
+    "class": "12ga",
+    "rounds": [
+        {
+            "name": "5.25mm Buckshot",
+            "damage": "8 x 3d12",
+            "penetration": 1,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": ["Subsonic"]
+        },
+        {
+            "name": "8.5mm Buckshot",
+            "damage": "8 x 5d10",
+            "penetration": 1,
+            "recoil": -58,
+            "accuracy": -8,
+            "other": []
+        },
+        {
+            "name": "6.5mm Buckshot",
+            "damage": "9 x 3d12",
+            "penetration": 1,
+            "recoil": 0,
+            "accuracy": 7,
+            "other": []
+        },
+        {
+            "name": "7mm Buckshot",
+            "damage": "8 x 4d10",
+            "penetration": 1,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "Piranha",
+            "damage": "10 x 2d12",
+            "penetration": 3,
+            "recoil": 0,
+            "accuracy": -3,
+            "other": []
+        },
+        {
+            "name": "Flechette",
+            "damage": "8 x 2d12",
+            "penetration": 6,
+            "recoil": 0,
+            "accuracy": -5,
+            "other": []
+        },
+        {
+            "name": "RIP Slug",
+            "damage": "22d12",
+            "penetration": 0,
+            "recoil": -18,
+            "accuracy": -2,
+            "other": []
+        },
+        {
+            "name": "Superperformance HP Slug",
+            "damage": "22d10",
+            "penetration": 0,
+            "recoil": 7,
+            "accuracy": 7,
+            "other": []
+        },
+        {
+            "name": "Grizzly 40 Slug",
+            "damage": "19d10",
+            "penetration": 1,
+            "recoil": -10,
+            "accuracy": -2,
+            "other": []
+        },
+        {
+            "name": "Lead Slug",
+            "damage": "21d8",
+            "penetration": 1,
+            "recoil": 0,
+            "accuracy": 2,
+            "other": []
+        },
+        {
+            "name": "Poleva-3 Slug",
+            "damage": "14d10",
+            "penetration": 2,
+            "recoil": 7,
+            "accuracy": 1,
+            "other": []
+        },
+        {
+            "name": "FTX Custom Lite Slug",
+            "damage": "15d12",
+            "penetration": 2,
+            "recoil": 13,
+            "accuracy": 3,
+            "other": []
+        },
+        {
+            "name": "Makeshift .50 BMG Slug",
+            "damage": "20d10",
+            "penetration": 3,
+            "recoil": -14,
+            "accuracy": -1,
+            "other": []
+        },
+        {
+            "name": "AP-20 Slug",
+            "damage": "13d12",
+            "penetration": 3,
+            "recoil": -25,
+            "accuracy": -2,
             "other": []
         }
     ]
