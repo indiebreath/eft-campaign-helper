@@ -1031,3 +1031,125 @@
         }
     ]
 }
+{
+    "class": "20ga",
+    "rounds": [
+        {
+            "name": "5.6mm Buckshot",
+            "damage": "8 x 4d6",
+            "penetration": 0,
+            "recoil": -5,
+            "accuracy": -5,
+            "other": ["Subsonic"]
+        },
+        {
+            "name": "6.2mm Buckshot",
+            "damage": "8 x 2d8",
+            "penetration": 0,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "Devastator Slug",
+            "damage": "20d10",
+            "penetration": 0,
+            "recoil": -15,
+            "accuracy": 3,
+            "other": []
+        },
+        {
+            "name": "7.5mm Buckshot",
+            "damage": "8 x 3d8",
+            "penetration": 1,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "7.3mm Buckshot",
+            "damage": "9 x 3d8",
+            "penetration": 1,
+            "recoil": -8,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "Poleva-3 Slug",
+            "damage": "10d12",
+            "penetration": 1,
+            "recoil": 7,
+            "accuracy": 1,
+            "other": []
+        },
+        {
+            "name": "Star Slug",
+            "damage": "12d12",
+            "penetration": 2,
+            "recoil": -3,
+            "accuracy": 3,
+            "other": []
+        },
+        {
+            "name": "Poleva-6U Slug",
+            "damage": "11d12",
+            "penetration": 2,
+            "recoil": 5,
+            "accuracy": 1,
+            "other": []
+        },
+        {
+            "name": "Flechette",
+            "damage": "8 x 2d10",
+            "penetration": 3,
+            "recoil": 0,
+            "accuracy": -5,
+            "other": []
+        },
+        {
+            "name": "TSS AP Slug",
+            "damage": "12d12",
+            "penetration": 3,
+            "recoil": -20,
+            "accuracy": -4,
+            "other": []
+        }
+    ]
+}
+{
+    "class": "23x75mm",
+    "rounds": [
+        {
+            "name": "Zvezzda Flashbang",
+            "damage": "0",
+            "penetration": 0,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": ["Flashbang (10m)"]
+        },
+        {
+            "name": "Shrapnel-25",
+            "damage": "8 x 13d6",
+            "penetration": 1,
+            "recoil": -5,
+            "accuracy": 10,
+            "other": ["Subsonic"]
+        },
+        {
+            "name": "Shrapnel-10",
+            "damage": "8 x 11d8",
+            "penetration": 1,
+            "recoil": 0,
+            "accuracy": 0,
+            "other": []
+        },
+        {
+            "name": "Barrikada Slug",
+            "damage": "19d10",
+            "penetration": 4,
+            "recoil": -13,
+            "accuracy": -3,
+            "other": []
+        }
+    ]
+}
