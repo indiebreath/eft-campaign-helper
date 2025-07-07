@@ -105,43 +105,23 @@ pub fn get_gun_names() -> Vec<String> {
 }
 
 pub fn get_gun(name: String) -> Gun {
-    let mut gun: Gun = Gun {
-        name: "ADAR 2-15".to_string(),
-        cartridge: "5.56x45mm".to_string(),
-        range: 500,
-        semi: true,
-        full: 0,
-        burst: [0, 0].to_vec(),
-        ammo: "FMJ".to_string(),
-        max: 30,
-        attachments: ["Sight".to_string(), "Compensator".to_string()].to_vec(),
-        accuracy: 0,
-        recoil: 0,
-        weight: 3.0,
-        size: 10,
-        class: vec!["Assault".to_string(), "Rifle".to_string()],
-        other: vec![],
-    };
-
-    for value in &*GUNS {
-        if value.name == name {
-            gun = value.clone();
-        }
-    }
-
-    return gun;
+    let pos = &GUNS
+        .clone()
+        .into_iter()
+        .position(|n| n.name == name)
+        .unwrap();
+    return GUNS[*pos].clone();
 }
 
 pub fn get_ammo_names(ammo_name: String) -> Vec<String> {
-    let mut rounds: Vec<Round> = Vec::new();
-    for value in &*AMMO {
-        if value.class == ammo_name {
-            rounds = value.rounds.clone();
-        }
-    }
+    let pos = &AMMO
+        .clone()
+        .into_iter()
+        .position(|c| c.class == ammo_name)
+        .unwrap();
 
     let mut names: Vec<String> = Vec::new();
-    for value in &rounds {
+    for value in &*AMMO[*pos].rounds {
         names.push(value.name.clone());
     }
 
@@ -149,24 +129,17 @@ pub fn get_ammo_names(ammo_name: String) -> Vec<String> {
 }
 
 pub fn get_ammo(ammo_name: String, round_name: String) -> Round {
-    let mut result: Round = Round {
-        name: "Warmageddon".to_string(),
-        damage: "11d8".to_string(),
-        penetration: 0,
-        recoil: -5,
-        accuracy: 5,
-        other: vec![],
-    };
+    let class_pos = &AMMO
+        .clone()
+        .into_iter()
+        .position(|c| c.class == ammo_name)
+        .unwrap();
+    let round_pos = &AMMO[*class_pos]
+        .rounds
+        .clone()
+        .into_iter()
+        .position(|n| n.name == round_name)
+        .unwrap();
 
-    for ammo in &*AMMO {
-        if ammo.class == ammo_name {
-            for round in &ammo.rounds {
-                if round.name == round_name {
-                    result = round.clone();
-                }
-            }
-        }
-    }
-
-    return result;
+    return AMMO[*class_pos].rounds[*round_pos].clone();
 }
