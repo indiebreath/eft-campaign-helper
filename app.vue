@@ -35,15 +35,15 @@ async function changePrimary(event) {
     primary.value = await invoke("get_gun", { gunName: event.target.value });
     ammo.value.primaryAmount[0] = primary.value.max;
     ammo.value.primaryAmount[1] = primary.value.max;
+    AMMO_NAMES.value = await invoke("get_ammo_names", {
+        ammoName: primary.value.cartridge,
+    });
 }
 
 async function changePrimaryAmmo(event) {
     ammo.value.primary = await invoke("get_ammo", {
         ammoName: primary.value.cartridge,
         roundName: event.target.value,
-    });
-    AMMO_NAMES.value = await invoke("get_ammo_names", {
-        ammoName: primary.value.cartridge,
     });
     updatePrimaryRecoil();
     updatePrimaryAccuracy();
