@@ -3,6 +3,7 @@ mod item;
 #[tauri::command]
 fn get_gun_names() -> Vec<String> {
     let names = item::get_gun_names();
+    item::fill_magazines();
     names.into()
 }
 

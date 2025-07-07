@@ -40,8 +40,19 @@ pub struct Ammo {
     rounds: Vec<Round>,
 }
 
+#[derive(Debug, Clone, Serialize, Deserialize)]
+pub struct Magazine {
+    name: String,
+    cartridge: Vec<String>,
+    fits: Vec<String>,
+    capacity: i8,
+    size: i8,
+    weight: f32,
+}
+
 pub static GUNS: LazyLock<Vec<Gun>> = LazyLock::new(|| self::fill_guns());
 pub static AMMO: LazyLock<Vec<Ammo>> = LazyLock::new(|| self::fill_ammo());
+//pub static MAGAZINES: LazyLock<Vec<Magazine>> = LazyLock::new(|| self::fill_magazines());
 
 fn fill_guns() -> Vec<Gun> {
     let mut path = env::current_dir().expect("Failed to retrieve path");
@@ -71,12 +82,25 @@ fn fill_ammo() -> Vec<Ammo> {
     return ammo;
 }
 
+pub fn fill_magazines() {
+    let mut path = env::current_dir().expect("Failed to retrieve path");
+    path.push("data/magazines.json");
+    let data: String = fs::read_to_string(&path).expect("Failed to read from file");
+    let stream = Deserializer::from_str(&data).into_iter::<Value>();
+
+    let mut magazines: Vec<Magazine> = Vec::new();
+    for value in stream {
+        magazines.push(Magazine::deserialize(value.unwrap()).expect("Failed to convert"));
+    }
+
+    println!("{:?}", magazines);
+}
+
 pub fn get_gun_names() -> Vec<String> {
     let mut names: Vec<String> = Vec::new();
     for value in &*GUNS {
         names.push(value.name.clone());
     }
-
     return names;
 }
 

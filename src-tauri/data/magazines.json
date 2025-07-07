@@ -1,0 +1,152 @@
+{
+    "name": "MP7 20-Round",
+    "cartridge": ["4.6x30mm"],
+    "fits": ["MP7"],
+    "capacity": 20,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "MP7 30-Round",
+    "cartridge": ["4.6x30mm"],
+    "fits": ["MP7"],
+    "capacity": 30,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "MP7 40-Round",
+    "cartridge": ["4.6x30mm"],
+    "fits": ["MP7"],
+    "capacity": 40,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "9A-91 20-Round",
+    "cartridge": ["9x39mm"],
+    "fits": ["9A-91"],
+    "capacity": 20,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "6L24",
+    "cartridge": ["9x39mm"],
+    "fits": ["AS-VAL", "SR-3M", "VSS Vintorez"],
+    "capacity": 10,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "6L25",
+    "cartridge": ["9x39mm"],
+    "fits": ["AS-VAL", "SR-3M", "VSS Vintorez"],
+    "capacity": 20,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "SR3M.130",
+    "cartridge": ["9x39mm"],
+    "fits": ["AS-VAL", "SR-3M", "VSS Vintorez"],
+    "capacity": 30,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "PM 90-93",
+    "cartridge": ["9x18mm"],
+    "fits": ["PM (t)"],
+    "capacity": 8,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "PM/PPSH",
+    "cartridge": ["9x18mm"],
+    "fits": ["PM (t)"],
+    "capacity": 84,
+    "size": 3,
+    "weight": 0.5
+}
+{
+    "name": "PP-91 20-Round",
+    "cartridge": ["9x18mm"],
+    "fits": ["PP-9 Klin"],
+    "capacity": 20,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "PP-91 30-Round",
+    "cartridge": ["9x18mm"],
+    "fits": ["PP-9 Klin"],
+    "capacity": 30,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "APS 20-Round",
+    "cartridge": ["9x18mm"],
+    "fits": ["APS"],
+    "capacity": 20,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "tt-105",
+    "cartridge": ["7.62x25mm"],
+    "fits": ["TT-33"],
+    "capacity": 8,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "Glock 17-Round",
+    "cartridge": ["9x19mm"],
+    "fits": ["Glock 17", "Glock 18C", "STM-9"],
+    "capacity": 17,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "Magpul PMAG GL9",
+    "cartridge": ["9x19mm"],
+    "fits": ["Glock 17", "Glock 18C", "STM-9"],
+    "capacity": 21,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "Glock \"Big Stick\"",
+    "cartridge": ["9x19mm"],
+    "fits": ["Glock 17", "Glock 18C", "STM-9"],
+    "capacity": 33,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "SGM Tactical Drum",
+    "cartridge": ["9x19mm"],
+    "fits": ["Glock 17", "Glock 18C", "STM-9"],
+    "capacity": 50,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "M9A3 17-Round",
+    "cartridge": ["9x19mm"],
+    "fits": ["M9A3"],
+    "capacity": 17,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "CX4 30-Round",
+    "cartridge": ["9x19mm"],
+    "fits": ["M9A3"],
+    "capacity": 30,
+    "size": 2,
+    "weight": 0.0
+}
