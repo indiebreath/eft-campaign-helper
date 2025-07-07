@@ -150,3 +150,779 @@
     "size": 2,
     "weight": 0.0
 }
+{
+    "name": "Grach 18-Round",
+    "cartridge": ["9x19mm"],
+    "fits": ["MP-443"],
+    "capacity": 18,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "PL-15 16-Round",
+    "cartridge": ["9x19mm"],
+    "fits": ["PL-15"],
+    "capacity": 16,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "MP5 20-Round",
+    "cartridge": ["9x19mm"],
+    "fits": ["MP5", "MP5K"],
+    "capacity": 20,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "MP5 30-Round",
+    "cartridge": ["9x19mm"],
+    "fits": ["MP5", "MP5K"],
+    "capacity": 30,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "X Products X-50",
+    "cartridge": ["9x19mm"],
+    "fits": ["MP5", "MP5K"],
+    "capacity": 50,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "MP9 20-Round",
+    "cartridge": ["9x19mm"],
+    "fits": ["MP9"],
+    "capacity": 20,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "MP9 30-Round",
+    "cartridge": ["9x19mm"],
+    "fits": ["MP9"],
+    "capacity": 30,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "MPX 20-Round",
+    "cartridge": ["9x19mm"],
+    "fits": ["MPX"],
+    "capacity": 20,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "MPX 30-Round",
+    "cartridge": ["9x19mm"],
+    "fits": ["MPX"],
+    "capacity": 30,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "MPX TTI",
+    "cartridge": ["9x19mm"],
+    "fits": ["MPX"],
+    "capacity": 41,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "MPX MFG Drum",
+    "cartridge": ["9x19mm"],
+    "fits": ["MPX"],
+    "capacity": 50,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "Saiga-9 sb.7",
+    "cartridge": ["9x19mm"],
+    "fits": ["PP-19-01", "Saiga-9"],
+    "capacity": 10,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "PP-19-01 30-Round",
+    "cartridge": ["9x19mm"],
+    "fits": ["PP-19-01", "Saiga-9"],
+    "capacity": 30,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "PP-19-01 FS MFG Drum",
+    "cartridge": ["9x19mm"],
+    "fits": ["PP-19-01", "Saiga-9"],
+    "capacity": 50,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "UZI 20-Round",
+    "cartridge": ["9x19mm"],
+    "fits": ["UZI", "UZI PRO"],
+    "capacity": 20,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "UZI 32-Round",
+    "cartridge": ["9x19mm"],
+    "fits": ["UZI", "UZI PRO"],
+    "capacity": 32,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "UZI 50-Round",
+    "cartridge": ["9x19mm"],
+    "fits": ["UZI", "UZI PRO"],
+    "capacity": 50,
+    "size": 3,
+    "weight": 0.5
+}
+{
+    "name": "UZI Beta C-Mag Drum",
+    "cartridge": ["9x19mm"],
+    "fits": ["UZI", "UZI PRO"],
+    "capacity": 100,
+    "size": 4,
+    "weight": 1.0
+}
+{
+    "name": "M1911A1 7-Round",
+    "cartridge": [".45"],
+    "fits": ["M45A1"],
+    "capacity": 7,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "M1911A1 Mec-Gar",
+    "cartridge": [".45"],
+    "fits": ["M45A1"],
+    "capacity": 11,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "HK USP 12-Round",
+    "cartridge": [".45"],
+    "fits": ["HK USP"],
+    "capacity": 12,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "HK UMP 25-Round",
+    "cartridge": [".45"],
+    "fits": ["UMP 45"],
+    "capacity": 25,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "Glock .45 13-Round",
+    "cartridge": [".45"],
+    "fits": ["KRISS Vector"],
+    "capacity": 13,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "KRISS G30 MagEx",
+    "cartridge": [".45"],
+    "fits": ["KRISS Vector"],
+    "capacity": 30,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "Desert Eagle .50 7-Round",
+    "cartridge": [".50 AE"],
+    "fits": ["Desert Eagle .50"],
+    "capacity": 7,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "SR-1MP 18-Round",
+    "cartridge": ["9x21mm"],
+    "fits": ["SR-1MP"],
+    "capacity": 18,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "SR-2M 20-Round",
+    "cartridge": ["9x21mm"],
+    "fits": ["SR-2M"],
+    "capacity": 20,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "SR-2M 30-Round",
+    "cartridge": ["9x21mm"],
+    "fits": ["SR-2M"],
+    "capacity": 30,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "Desert Eagle .357 9-Round",
+    "cartridge": [".357"],
+    "fits": ["Desert Eagle .357"],
+    "capacity": 9,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "Five-seveN 20-Round",
+    "cartridge": ["5.7x28mm"],
+    "fits": ["FN Five-seveN"],
+    "capacity": 20,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "P90 50-Round",
+    "cartridge": ["5.7x28mm"],
+    "fits": ["FN P90"],
+    "capacity": 50,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "VPO-215 4-Round",
+    "cartridge": [".366"],
+    "fits": ["VPO-215"],
+    "capacity": 4,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "Saiga 545 10-Round",
+    "cartridge": ["5.45x39mm"],
+    "fits": ["SAG AK", "AK-12", "AK-74M", "AKS-74U", "RPK-16"],
+    "capacity": 10,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "Delta-Tek Saiga 545",
+    "cartridge": ["5.45x39mm"],
+    "fits": ["SAG AK", "AK-12", "AK-74M", "AKS-74U", "RPK-16"],
+    "capacity": 20,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "6L20",
+    "cartridge": ["5.45x39mm"],
+    "fits": ["SAG AK", "AK-12", "AK-74M", "AKS-74U", "RPK-16"],
+    "capacity": 30,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "6L18",
+    "cartridge": ["5.45x39mm"],
+    "fits": ["SAG AK", "AK-12", "AK-74M", "AKS-74U", "RPK-16"],
+    "capacity": 45,
+    "size": 3,
+    "weight": 0.5
+}
+{
+    "name": "6L31",
+    "cartridge": ["5.45x39mm"],
+    "fits": ["SAG AK", "AK-12", "AK-74M", "AKS-74U", "RPK-16"],
+    "capacity": 60,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "RPK-16 Drum",
+    "cartridge": ["5.45x39mm"],
+    "fits": ["SAG AK", "AK-12", "AK-74M", "AKS-74U", "RPK-16"],
+    "capacity": 95,
+    "size": 3,
+    "weight": 0.5
+}
+{
+    "name": "Magpul PMAG 10 STANAG",
+    "cartridge": ["5.56x45mm", ".300"],
+    "fits": ["ADAR 2-15", "M4A1", "HK 416A5", "MCX"],
+    "capacity": 10,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "Magpul PMAG 20 STANAG",
+    "cartridge": ["5.56x45mm", ".300"],
+    "fits": ["ADAR 2-15", "M4A1", "HK 416A5", "MCX"],
+    "capacity": 20,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "AR-15 Colt STANAG",
+    "cartridge": ["5.56x45mm", ".300"],
+    "fits": ["ADAR 2-15", "M4A1", "HK 416A5", "MCX"],
+    "capacity": 30,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "Magpul PMAG 40 STANAG",
+    "cartridge": ["5.56x45mm", ".300"],
+    "fits": ["ADAR 2-15", "M4A1", "HK 416A5", "MCX"],
+    "capacity": 30,
+    "size": 3,
+    "weight": 0.0
+}
+{
+    "name": "Magpul PMAG D-60 STANAG",
+    "cartridge": ["5.56x45mm", ".300"],
+    "fits": ["ADAR 2-15", "M4A1", "HK 416A5", "MCX"],
+    "capacity": 60,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "AR-15 Beta C-Mag",
+    "cartridge": ["5.56x45mm", ".300"],
+    "fits": ["ADAR 2-15", "M4A1", "HK 416A5", "MCX"],
+    "capacity": 100,
+    "size": 4,
+    "weight": 1.0
+}
+{
+    "name": "AK-101 6L29",
+    "cartridge": ["5.56x45mm"],
+    "fits": ["AK-101"],
+    "capacity": 30,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "AK 5.56x45 Molot Arms 45-Round",
+    "cartridge": ["5.56x45mm"],
+    "fits": ["AK-101"],
+    "capacity": 45,
+    "size": 3,
+    "weight": 0.5
+}
+{
+    "name": "Steyr AUG 10-Round",
+    "cartridge": ["5.56x45mm"],
+    "fits": ["AUG A3"],
+    "capacity": 10,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "Steyr AUG 30-Round",
+    "cartridge": ["5.56x45mm"],
+    "fits": ["AUG A3"],
+    "capacity": 30,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "Steyr AUG 42-Round",
+    "cartridge": ["5.56x45mm"],
+    "fits": ["AUG A3"],
+    "capacity": 42,
+    "size": 3,
+    "weight": 0.0
+}
+{
+    "name": "HK G36 30-Round",
+    "cartridge": ["5.56x45mm"],
+    "fits": ["G36"],
+    "capacity": 30,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "SKS 10-Round",
+    "cartridge": ["7.62x39mm"],
+    "fits": ["OP-SKS"],
+    "capacity": 10,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "TAPCO 6610",
+    "cartridge": ["7.62x39mm"],
+    "fits": ["OP-SKS"],
+    "capacity": 20,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "ProMag AALVX",
+    "cartridge": ["7.62x39mm"],
+    "fits": ["OP-SKS"],
+    "capacity": 35,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "KCI 75-Round Drum",
+    "cartridge": ["7.62x39mm"],
+    "fits": ["OP-SKS"],
+    "capacity": 75,
+    "size": 3,
+    "weight": 1.0
+}
+{
+    "name": "AK Ribbed Metal",
+    "cartridge": ["7.62x39mm"],
+    "fits": ["AKMN", "AKMSN", "VPO-136", "VPO-209"],
+    "capacity": 10,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "AK-103 30-Round",
+    "cartridge": ["7.62x39mm"],
+    "fits": ["AKMN", "AKMSN", "VPO-136", "VPO-209"],
+    "capacity": 30,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "Molot Arms 6P2.Sb-11",
+    "cartridge": ["7.62x39mm"],
+    "fits": ["AKMN", "AKMSN", "VPO-136", "VPO-209"],
+    "capacity": 30,
+    "size": 3,
+    "weight": 0.5
+}
+{
+    "name": "X Products X-47 Drum",
+    "cartridge": ["7.62x39mm"],
+    "fits": ["AKMN", "AKMSN", "VPO-136", "VPO-209"],
+    "capacity": 50,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "Molot Arms 75-Round Drum",
+    "cartridge": ["7.62x39mm"],
+    "fits": ["AKMN", "AKMSN", "VPO-136", "VPO-209"],
+    "capacity": 75,
+    "size": 4,
+    "weight": 1.0
+}
+{
+    "name": "RPD Buben Box",
+    "cartridge": ["7.62x39mm"],
+    "fits": ["RPDN"],
+    "capacity": 100,
+    "size": 4,
+    "weight": 1.0
+}
+{
+    "name": "FAL 10-Round",
+    "cartridge": ["7.62x51mm"],
+    "fits": ["RFB", "SA58"],
+    "capacity": 10,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "FAL 20-Round",
+    "cartridge": ["7.62x51mm"],
+    "fits": ["RFB", "SA58"],
+    "capacity": 20,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "FAL 30-Round",
+    "cartridge": ["7.62x51mm"],
+    "fits": ["RFB", "SA58"],
+    "capacity": 30,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "VPO-101 5-Round",
+    "cartridge": ["7.62x51mm"],
+    "fits": ["VPO-101"],
+    "capacity": 5,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "VPO-101 10-Round",
+    "cartridge": ["7.62x51mm"],
+    "fits": ["VPO-101"],
+    "capacity": 10,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "AR-10 KAC 10-Round",
+    "cartridge": ["7.62x51mm", "6.8x51mm"],
+    "fits": ["MDR", "SR-25", "MCX Spear"],
+    "capacity": 10,
+    "size": 1,
+    "weight": 0.5
+}
+{
+    "name": "AR-10 KAC 20-Round",
+    "cartridge": ["7.62x51mm", "6.8x51mm"],
+    "fits": ["MDR", "SR-25", "MCX Spear"],
+    "capacity": 20,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "X Products X-25 Drum",
+    "cartridge": ["7.62x51mm", "6.8x51mm"],
+    "fits": ["MDR", "SR-25", "MCX Spear"],
+    "capacity": 50,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "DVL-10 10-Round",
+    "cartridge": ["7.62x51mm"],
+    "fits": ["DVL-10"],
+    "capacity": 10,
+    "size": 1,
+    "weight": 0.5
+}
+{
+    "name": "AI AICS 5-Round",
+    "cartridge": ["7.62x51mm"],
+    "fits": ["M700"],
+    "capacity": 5,
+    "size": 1,
+    "weight": 0.5
+}
+{
+    "name": "AI AICS 10-Round",
+    "cartridge": ["7.62x51mm"],
+    "fits": ["M700"],
+    "capacity": 10,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "ProMag AA-70",
+    "cartridge": ["7.62x51mm"],
+    "fits": ["M700"],
+    "capacity": 20,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "G28 10-Round",
+    "cartridge": ["7.62x51mm"],
+    "fits": ["G28"],
+    "capacity": 10,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "G28 20-Round",
+    "cartridge": ["7.62x51mm"],
+    "fits": ["G28"],
+    "capacity": 20,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "M1A 10-Round",
+    "cartridge": ["7.62x51mm"],
+    "fits": ["M1A"],
+    "capacity": 10,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "M1A 20-Round",
+    "cartridge": ["7.62x51mm"],
+    "fits": ["M1A"],
+    "capacity": 20,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "M1A 30-Round",
+    "cartridge": ["7.62x51mm"],
+    "fits": ["M1A"],
+    "capacity": 30,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "X Productx X-14 Drum",
+    "cartridge": ["7.62x51mm"],
+    "fits": ["M1A"],
+    "capacity": 50,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "M60 Capco Assault Box",
+    "cartridge": ["7.62x51mm"],
+    "fits": ["M60E4"],
+    "capacity": 100,
+    "size": 4,
+    "weight": 0.5
+}
+{
+    "name": "SVT-40 10-Round",
+    "cartridge": ["7.62x54mmR"],
+    "fits": ["AVT-40"],
+    "capacity": 10,
+    "size": 1,
+    "weight": 0.5
+}
+{
+    "name": "AVT-40 15-Round",
+    "cartridge": ["7.62x54mmR"],
+    "fits": ["AVT-40"],
+    "capacity": 15,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "SV-98 10-Round",
+    "cartridge": ["7.62x54mmR"],
+    "fits": ["SV-98"],
+    "capacity": 10,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "SVD 10-Round",
+    "cartridge": ["7.62x54mmR"],
+    "fits": ["SVDS"],
+    "capacity": 10,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "SVD 20-Round",
+    "cartridge": ["7.62x54mmR"],
+    "fits": ["SVDS"],
+    "capacity": 20,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "PK Box",
+    "cartridge": ["7.62x54mmR"],
+    "fits": ["PKP"],
+    "capacity": 100,
+    "size": 4,
+    "weight": 1.5
+}
+{
+    "name": "ASh-12 10-Round",
+    "cartridge": ["12.7x55mm"],
+    "fits": ["ASh-12"],
+    "capacity": 10,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "ASh-12 20-Round",
+    "cartridge": ["12.7x55mm"],
+    "fits": ["ASh-12"],
+    "capacity": 20,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "AI AXMC LM 10-Round",
+    "cartridge": [".338"],
+    "fits": ["AXMC"],
+    "capacity": 10,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "Mk-18 LM 10-Round",
+    "cartridge": [".338"],
+    "fits": ["SI Mk-18"],
+    "capacity": 10,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "AA-12 8-Round",
+    "cartridge": ["12ga"],
+    "fits": ["AA-12"],
+    "capacity": 8,
+    "size": 2,
+    "weight": 0.5
+}
+{
+    "name": "AA-12 20-Round",
+    "cartridge": ["12ga"],
+    "fits": ["AA-12"],
+    "capacity": 20,
+    "size": 4,
+    "weight": 1.0
+}
+{
+    "name": "SOK-12 SB.5",
+    "cartridge": ["12ga"],
+    "fits": ["Saiga-12K"],
+    "capacity": 5,
+    "size": 2,
+    "weight": 0.0
+}
+{
+    "name": "SOK-12 SAI-01",
+    "cartridge": ["12ga"],
+    "fits": ["Saiga-12K"],
+    "capacity": 10,
+    "size": 3,
+    "weight": 0.0
+}
+{
+    "name": "SOK-12 MaxRounds Powermag",
+    "cartridge": ["12ga"],
+    "fits": ["Saiga-12K"],
+    "capacity": 20,
+    "size": 4,
+    "weight": 0.5
+}
+{
+    "name": "MTs 20-01 SB.3 2-Shot",
+    "cartridge": ["20ga"],
+    "fits": ["TOZ-106"],
+    "capacity": 2,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "MTs 20-01 SB.3 4-Shot",
+    "cartridge": ["20ga"],
+    "fits": ["TOZ-106"],
+    "capacity": 4,
+    "size": 1,
+    "weight": 0.0
+}
+{
+    "name": "MTs 20-01 SB.3 5-Shot",
+    "cartridge": ["20ga"],
+    "fits": ["TOZ-106"],
+    "capacity": 5,
+    "size": 1,
+    "weight": 0.0
+}
