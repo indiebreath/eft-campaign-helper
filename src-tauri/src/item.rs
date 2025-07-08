@@ -52,7 +52,7 @@ pub struct Magazine {
 
 pub static GUNS: LazyLock<Vec<Gun>> = LazyLock::new(|| self::fill_guns());
 pub static AMMO: LazyLock<Vec<Ammo>> = LazyLock::new(|| self::fill_ammo());
-//pub static MAGAZINES: LazyLock<Vec<Magazine>> = LazyLock::new(|| self::fill_magazines());
+pub static MAGAZINES: LazyLock<Vec<Magazine>> = LazyLock::new(|| self::fill_magazines());
 
 fn fill_guns() -> Vec<Gun> {
     let mut path = env::current_dir().expect("Failed to retrieve path");
@@ -82,7 +82,7 @@ fn fill_ammo() -> Vec<Ammo> {
     return ammo;
 }
 
-pub fn fill_magazines() {
+pub fn fill_magazines() -> Vec<Magazine> {
     let mut path = env::current_dir().expect("Failed to retrieve path");
     path.push("data/magazines.json");
     let data: String = fs::read_to_string(&path).expect("Failed to read from file");
@@ -93,7 +93,7 @@ pub fn fill_magazines() {
         magazines.push(Magazine::deserialize(value.unwrap()).expect("Failed to convert"));
     }
 
-    println!("{:?}", magazines);
+    return magazines;
 }
 
 pub fn get_gun_names() -> Vec<String> {
@@ -142,4 +142,28 @@ pub fn get_ammo(ammo_name: String, round_name: String) -> Round {
         .unwrap();
 
     return AMMO[*class_pos].rounds[*round_pos].clone();
+}
+
+pub fn get_magazine_names(gun_name: String) -> Vec<String> {
+    let magazines = vec![MAGAZINES
+        .clone()
+        .into_iter()
+        .filter(|f| f.fits.contains(&gun_name))
+        .collect::<Vec<Magazine>>()];
+
+    let mut names: Vec<String> = Vec::new();
+    for value in &magazines[0] {
+        names.push(value.name.clone());
+    }
+
+    return names;
+}
+
+pub fn get_magazine(magazine_name: String) -> Magazine {
+    let pos = &MAGAZINES
+        .clone()
+        .into_iter()
+        .position(|n| n.name == magazine_name)
+        .unwrap();
+    return MAGAZINES[*pos].clone();
 }

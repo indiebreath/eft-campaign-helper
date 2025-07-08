@@ -2,77 +2,118 @@
 import { ref } from "vue";
 import { invoke } from "@tauri-apps/api/core";
 
-const GUN_NAMES = await invoke("get_gun_names");
+const GUNS = ref({
+    GUN_NAMES: await invoke("get_gun_names"),
+    primary: ref(await invoke("get_gun", { gunName: "9A-91" })),
+});
 
-const primary = ref(await invoke("get_gun", { gunName: "9A-91" }));
-const ammo = ref({
-    primary: await invoke("get_ammo", {
-        ammoName: primary.value.cartridge,
-        roundName: primary.value.ammo,
+const ATTACHMENTS = ref({
+    MAGAZINE_NAMES: await invoke("get_magazine_names", {
+        gunName: GUNS.value.primary.name,
     }),
-    primaryAmount: [primary.value.max, primary.value.max, 180],
+    primaryMagazine: await invoke("get_magazine", {
+        magazineName: "9A-91 20-Round",
+    }),
+});
+
+const AMMO = ref({
+    AMMO_NAMES: await invoke("get_ammo_names", {
+        ammoName: GUNS.value.primary.cartridge,
+    }),
+    primaryAmmo: await invoke("get_ammo", {
+        ammoName: GUNS.value.primary.cartridge,
+        roundName: GUNS.value.primary.ammo,
+    }),
+    primaryAmount: [
+        ATTACHMENTS.value.primaryMagazine.capacity,
+        ATTACHMENTS.value.primaryMagazine.capacity,
+        180,
+    ],
     secondary: [0, 0, 0],
     tertiary: [0, 0, 0],
 });
 
-const AMMO_NAMES = ref(
-    await invoke("get_ammo_names", { ammoName: primary.value.cartridge }),
-);
-
 function updatePrimaryRecoil() {
-    const recoil = ammo.value.primary.recoil;
-    primary.value.recoil = recoil;
+    const recoil = AMMO.value.primaryAmmo.recoil;
+    GUNS.value.primary.recoil = recoil;
 }
 updatePrimaryRecoil();
 
 function updatePrimaryAccuracy() {
-    const accuracy = ammo.value.primary.accuracy;
-    primary.value.accuracy = accuracy;
+    const accuracy = AMMO.value.primaryAmmo.accuracy;
+    GUNS.value.primary.accuracy = accuracy;
 }
 updatePrimaryAccuracy();
 
-async function changePrimary(event) {
-    primary.value = await invoke("get_gun", { gunName: event.target.value });
-    ammo.value.primaryAmount[0] = primary.value.max;
-    ammo.value.primaryAmount[1] = primary.value.max;
-    AMMO_NAMES.value = await invoke("get_ammo_names", {
-        ammoName: primary.value.cartridge,
+async function primaryUpdateAttachments() {
+    ATTACHMENTS.value.MAGAZINE_NAMES = await invoke("get_magazine_names", {
+        gunName: GUNS.value.primary.name,
+    });
+    ATTACHMENTS.value.primaryMagazine = await invoke("get_magazine", {
+        magazineName: MAGAZINE_NAMES[0],
     });
 }
 
-async function changePrimaryAmmo(event) {
-    ammo.value.primary = await invoke("get_ammo", {
-        ammoName: primary.value.cartridge,
+async function primaryUpdateAmmo() {
+    AMMO.value.AMMO_NAMES = await invoke("get_ammo_names", {
+        ammoName: GUNS.value.primary.cartridge,
+    });
+    AMMO.value.primaryAmmo = await invoke("get_ammo", {
+        ammoName: GUNS.value.primary.cartridge,
+        roundName: GUNS.value.primary.ammo,
+    });
+    AMMO.value.primaryAmount[0] = ATTACHMENTS.value.primaryMagazine.capacity;
+    AMMO.value.primaryAmount[1] = ATTACHMENTS.value.primaryMagazine.capacity;
+    updatePrimaryRecoil();
+    updatePrimaryAccuracy();
+}
+
+async function primaryChange(event) {
+    GUNS.value.primary = await invoke("get_gun", {
+        gunName: event.target.value,
+    });
+    primaryUpdateAttachments();
+    primaryUpdateAmmo();
+}
+
+async function primaryChangeMagazine(event) {
+    ATTACHMENTS.value.primaryMagazine = await invoke("get_magazine", {
+        magazineName: event.target.value,
+    });
+    primaryUpdateAmmo();
+}
+
+async function primaryChangeAmmo(event) {
+    AMMO.value.primaryAmmo = await invoke("get_ammo", {
+        ammoName: GUNS.value.primary.cartridge,
         roundName: event.target.value,
     });
     updatePrimaryRecoil();
     updatePrimaryAccuracy();
 }
 
-function changePrimaryAttachment(event) {
-    const position = primary.value.attachments.indexOf(event.target.id);
-    primary.value.attachments[position] = event.target.value;
+function primaryChangeAmmoTotal(event) {
+    AMMO.value.primaryAmount[2] = event.target.value;
 }
 
-function changePrimaryMax(event) {
-    ammo.value.primaryAmount[1] = event.target.value;
-}
-
-function firePrimary() {
-    ammo.value.primaryAmount[0]--;
-    if (ammo.value.primaryAmount[0] < 0) {
-        ammo.value.primaryAmount[0] = 0;
+function primaryFire() {
+    if (AMMO.value.primaryAmount[0] > 0) {
+        AMMO.value.primaryAmount[0]--;
     }
 }
 
-function reloadPrimary() {
-    const diff = ammo.value.primaryAmount[1] - ammo.value.primaryAmount[0];
-    ammo.value.primaryAmount[0] = ammo.value.primaryAmount[1];
-    ammo.value.primaryAmount[2] = ammo.value.primaryAmount[2] - diff;
-}
+function primaryReload() {
+    const diff = AMMO.value.primaryAmount[1] - AMMO.value.primaryAmount[0];
+    if (diff > AMMO.value.primaryAmount[2]) {
+        AMMO.value.primaryAmount[0] =
+            parseInt(AMMO.value.primaryAmount[2]) +
+            parseInt(AMMO.value.primaryAmount[0]);
+        AMMO.value.primaryAmount[2] = 0;
+        return;
+    }
 
-function changePrimaryTotal(event) {
-    ammo.value.primaryAmount[2] = event.target.value;
+    AMMO.value.primaryAmount[0] = ATTACHMENTS.value.primaryMagazine.capacity;
+    AMMO.value.primaryAmount[2] -= diff;
 }
 </script>
 
@@ -91,42 +132,46 @@ function changePrimaryTotal(event) {
                     <select
                         id="primaryWeapon"
                         name="primaryWeapon"
-                        @change="changePrimary($event)"
+                        @change="primaryChange($event)"
                     >
-                        <option v-for="x in GUN_NAMES" :key="x" :value="x">
-                            {{ x }}
+                        <option v-for="a in GUNS.GUN_NAMES" :key="a" :value="a">
+                            {{ a }}
                         </option>
                     </select>
 
-                    <p>Cartridge: {{ primary.cartridge }}</p>
+                    <p>Cartridge: {{ GUNS.primary.cartridge }}</p>
 
-                    <p>Range: {{ primary.range }}m</p>
+                    <p>Range: {{ GUNS.primary.range }}m</p>
 
                     <p>Firing Modes:</p>
-                    <p v-if="primary.semi">Semi-Auto</p>
-                    <p v-if="primary.full != 0">
-                        Full-Auto ({{ primary.full }})
+                    <p v-if="GUNS.primary.semi">Semi-Auto</p>
+                    <p v-if="GUNS.primary.full != 0">
+                        Full-Auto ({{ GUNS.primary.full }})
                     </p>
-                    <p v-if="primary.burst[0] != 0">
-                        Burst ({{ primary.burst[0] }}, {{ primary.burst[1] }})
+                    <p v-if="GUNS.primary.burst[0] != 0">
+                        Burst ({{ GUNS.primary.burst[0] }},
+                        {{ GUNS.primary.burst[1] }})
                     </p>
 
-                    <div v-if="primary.attachments[0]">
-                        <label for="primaryAttachments">Attachments:</label>
-                        <input
-                            v-for="y in primary.attachments"
-                            :id="y"
-                            :key="y"
-                            type="text"
-                            class="primaryAttachments"
-                            name="primaryAttachments"
-                            :value="y"
-                            @change="changePrimaryAttachment($event)"
+                    <p>Attachments:</p>
+                    <label for="primaryMagazine">Magazine:</label>
+                    <select
+                        v-if="GUNS.primary.attachments.includes('Magazine')"
+                        id="primaryMagazine"
+                        name="primaryMagazine"
+                        @change="primaryChangeMagazine($event)"
+                    >
+                        <option
+                            v-for="i in ATTACHMENTS.MAGAZINE_NAMES"
+                            :key="i"
+                            :value="i"
                         >
-                    </div>
+                            {{ i }}
+                        </option>
+                    </select>
 
-                    <p>Weight: {{ primary.weight }}kg</p>
-                    <p>Size: {{ primary.size }}</p>
+                    <p>Weight: {{ GUNS.primary.weight }}kg</p>
+                    <p>Size: {{ GUNS.primary.size }}</p>
                 </div>
 
                 <div id="primary-ammo">
@@ -134,45 +179,41 @@ function changePrimaryTotal(event) {
                     <select
                         id="primaryAmmo"
                         name="primaryAmmo"
-                        @change="changePrimaryAmmo($event)"
+                        @change="primaryChangeAmmo($event)"
                     >
-                        <option v-for="z in AMMO_NAMES" :key="z" :value="z">
+                        <option
+                            v-for="z in AMMO.AMMO_NAMES"
+                            :key="z"
+                            :value="z"
+                        >
                             {{ z }}
                         </option>
                     </select>
 
-                    <p>Damage: {{ ammo.primary.damage }}</p>
-                    <p>Penetration: {{ ammo.primary.penetration }}</p>
+                    <p>Damage: {{ AMMO.primaryAmmo.damage }}</p>
+                    <p>Penetration: {{ AMMO.primaryAmmo.penetration }}</p>
 
-                    <p>Accuracy: {{ primary.accuracy }}</p>
-                    <p>Recoil: {{ primary.recoil }}</p>
+                    <p>Accuracy: {{ GUNS.primary.accuracy }}</p>
+                    <p>Recoil: {{ GUNS.primary.recoil }}</p>
                 </div>
 
                 <div id="primary-function">
-                    <p>Current Ammo: {{ ammo.primaryAmount[0] }}</p>
-
-                    <label for="maxPrimaryAmmo">Max Ammo:</label>
-                    <input
-                        id="maxPrimaryAmmo"
-                        type="text"
-                        name="maxPrimaryAmmo"
-                        :value="ammo.primaryAmount[1]"
-                        @change="changePrimaryMax($event)"
-                    ><br >
+                    <p>Current Ammo: {{ AMMO.primaryAmount[0] }}</p>
+                    <p>Max Ammo: {{ AMMO.primaryAmount[1] }}</p>
 
                     <label for="totalAmmo">Total Ammo:</label>
                     <input
                         id="totalPrimaryAmmo"
                         type="text"
                         name="totalPrimaryAmmo"
-                        :value="ammo.primaryAmount[2]"
-                        @change="changePrimaryTotal($event)"
+                        :value="AMMO.primaryAmount[2]"
+                        @change="primaryChangeAmmoTotal($event)"
                     ><br >
 
-                    <button id="firePrimary" @click="firePrimary()">
+                    <button id="firePrimary" @click="primaryFire()">
                         Fire
                     </button>
-                    <button id="primaryReload" @click="reloadPrimary()">
+                    <button id="primaryReload" @click="primaryReload()">
                         Reload
                     </button>
                 </div>

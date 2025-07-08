@@ -3,7 +3,6 @@ mod item;
 #[tauri::command]
 fn get_gun_names() -> Vec<String> {
     let names = item::get_gun_names();
-    item::fill_magazines();
     names.into()
 }
 
@@ -25,6 +24,18 @@ fn get_ammo(ammo_name: String, round_name: String) -> item::Round {
     result.into()
 }
 
+#[tauri::command]
+fn get_magazine_names(gun_name: String) -> Vec<String> {
+    let result: Vec<String> = item::get_magazine_names(gun_name);
+    return result;
+}
+
+#[tauri::command]
+fn get_magazine(magazine_name: String) -> item::Magazine {
+    let result: item::Magazine = item::get_magazine(magazine_name);
+    return result;
+}
+
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
     tauri::Builder::default()
@@ -38,7 +49,14 @@ pub fn run() {
             }
             Ok(())
         })
-        .invoke_handler(tauri::generate_handler![get_gun_names, get_gun, get_ammo, get_ammo_names])
+        .invoke_handler(tauri::generate_handler![
+            get_gun_names,
+            get_gun,
+            get_ammo,
+            get_ammo_names,
+            get_magazine_names,
+            get_magazine
+        ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
 }

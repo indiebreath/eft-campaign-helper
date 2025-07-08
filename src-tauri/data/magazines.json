@@ -457,7 +457,7 @@
 {
     "name": "Magpul PMAG 10 STANAG",
     "cartridge": ["5.56x45mm", ".300"],
-    "fits": ["ADAR 2-15", "M4A1", "HK 416A5", "MCX"],
+    "fits": ["ADAR 2-15", "TX-15 DML", "M4A1", "HK 416A5", "MCX"],
     "capacity": 10,
     "size": 1,
     "weight": 0.0
@@ -465,7 +465,7 @@
 {
     "name": "Magpul PMAG 20 STANAG",
     "cartridge": ["5.56x45mm", ".300"],
-    "fits": ["ADAR 2-15", "M4A1", "HK 416A5", "MCX"],
+    "fits": ["ADAR 2-15", "TX-15 DML", "M4A1", "HK 416A5", "MCX"],
     "capacity": 20,
     "size": 1,
     "weight": 0.0
@@ -473,7 +473,7 @@
 {
     "name": "AR-15 Colt STANAG",
     "cartridge": ["5.56x45mm", ".300"],
-    "fits": ["ADAR 2-15", "M4A1", "HK 416A5", "MCX"],
+    "fits": ["ADAR 2-15", "TX-15 DML", "M4A1", "HK 416A5", "MCX"],
     "capacity": 30,
     "size": 2,
     "weight": 0.5
@@ -481,7 +481,7 @@
 {
     "name": "Magpul PMAG 40 STANAG",
     "cartridge": ["5.56x45mm", ".300"],
-    "fits": ["ADAR 2-15", "M4A1", "HK 416A5", "MCX"],
+    "fits": ["ADAR 2-15", "TX-15 DML", "M4A1", "HK 416A5", "MCX"],
     "capacity": 30,
     "size": 3,
     "weight": 0.0
@@ -489,7 +489,7 @@
 {
     "name": "Magpul PMAG D-60 STANAG",
     "cartridge": ["5.56x45mm", ".300"],
-    "fits": ["ADAR 2-15", "M4A1", "HK 416A5", "MCX"],
+    "fits": ["ADAR 2-15", "TX-15 DML", "M4A1", "HK 416A5", "MCX"],
     "capacity": 60,
     "size": 2,
     "weight": 0.5
@@ -497,7 +497,7 @@
 {
     "name": "AR-15 Beta C-Mag",
     "cartridge": ["5.56x45mm", ".300"],
-    "fits": ["ADAR 2-15", "M4A1", "HK 416A5", "MCX"],
+    "fits": ["ADAR 2-15", "TX-15 DML", "M4A1", "HK 416A5", "MCX"],
     "capacity": 100,
     "size": 4,
     "weight": 1.0
